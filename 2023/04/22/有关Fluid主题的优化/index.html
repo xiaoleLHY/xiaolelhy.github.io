@@ -16,23 +16,24 @@
   <meta name="author" content="小乐">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="刚开始Fluid主题页面虽然完善，但还是可以将主题页面感官下More fascinating!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/04/18/hello-world/index.html">
+<meta property="og:title" content="有关Fluid主题的优化">
+<meta property="og:url" content="http://example.com/2023/04/22/%E6%9C%89%E5%85%B3Fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="小乐">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="刚开始Fluid主题页面虽然完善，但还是可以将主题页面感官下More fascinating!">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/blog1/1.png">
-<meta property="article:published_time" content="2023-04-18T03:31:41.860Z">
-<meta property="article:modified_time" content="2023-04-22T10:43:10.100Z">
+<meta property="article:published_time" content="2023-04-22T10:25:24.436Z">
+<meta property="article:modified_time" content="2023-04-22T12:04:58.154Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="My first blog:有关Fluid主题的优化">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/blog1/1.png">
   
   
   
-  <title>Hello World - 小乐</title>
+  <title>有关Fluid主题的优化 - 小乐</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -185,13 +186,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/example.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/blog1/1.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="有关Fluid主题的优化"></span>
           
         </div>
 
@@ -202,8 +203,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-18 11:31" pubdate>
-          2023年4月18日 中午
+        <time datetime="2023-04-22 18:25" pubdate>
+          2023年4月22日 晚上
         </time>
       </span>
     
@@ -214,7 +215,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          2.8k 字
         
       </span>
     
@@ -225,7 +226,7 @@
         
         
         
-          4 分钟
+          24 分钟
         
       </span>
     
@@ -263,24 +264,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">有关Fluid主题的优化</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 复制">$ hexo new &quot;My New Post&quot;<br></code></pre></td></tr></table></figure>
+                <h2 id="下面直接进入主题"><a href="#下面直接进入主题" class="headerlink" title="下面直接进入主题"></a>下面直接进入主题</h2><h3 id="一、【点击弹出爱心】"><a href="#一、【点击弹出爱心】" class="headerlink" title="一、【点击弹出爱心】"></a>一、【点击弹出爱心】</h3><p>1.在hexo\blog\themes\fluid\source\js目录下新建一个js文件为click-love.js<br>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs 复制">! function (e, t, a) &#123;<br>    function n() &#123;<br>        c(&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &#x27;&#x27;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;), o(), r()<br>    &#125;<br><br>    function r() &#123;<br>        for (var e = 0; e &lt; d.length; e++) d[e].alpha &lt;= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = &quot;left:&quot; + d[e].x + &quot;px;top:&quot; + d[e].y + &quot;px;opacity:&quot; + d[e].alpha + &quot;;transform:scale(&quot; + d[e].scale + &quot;,&quot; + d[e].scale + &quot;) rotate(45deg);background:&quot; + d[e].color + &quot;;z-index:99999&quot;);<br>        requestAnimationFrame(r)<br>    &#125;<br><br>    function o() &#123;<br>        var t = &quot;function&quot; == typeof e.onclick &amp;&amp; e.onclick;<br>        e.onclick = function (e) &#123;<br>            t &amp;&amp; t(), i(e)<br>        &#125;<br>    &#125;<br><br>    function i(e) &#123;<br>        var a = t.createElement(&quot;div&quot;);<br>        a.className = &quot;heart&quot;, d.push(&#123;<br>            el: a,<br>            x: e.clientX - 5,<br>            y: e.clientY - 5,<br>            scale: 1,<br>            alpha: 1,<br>            color: s()<br>        &#125;), t.body.appendChild(a)<br>    &#125;<br><br>    function c(e) &#123;<br>        var a = t.createElement(&quot;style&quot;);<br>        a.type = &quot;text/css&quot;;<br>        try &#123;<br>            a.appendChild(t.createTextNode(e))<br>        &#125; catch (t) &#123;<br>            a.styleSheet.cssText = e<br>        &#125;<br>        t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a)<br>    &#125;<br><br>    function s() &#123;<br>        return &quot;rgb(&quot; + ~~(255 * Math.random()) + &quot;,&quot; + ~~(255 * Math.random()) + &quot;,&quot; + ~~(255 * Math.random()) + &quot;)&quot;<br>    &#125;<br>    var d = [];<br>    e.requestAnimationFrame = function () &#123;<br>        return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) &#123;<br>            setTimeout(e, 1e3 / 60)<br>        &#125;<br>    &#125;(), n()<br>&#125;(window, document);<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 复制">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>2.在hexo\blog\themes\fluid\layout_partials\footer.ejs文件中引入刚才创建的js文件<br>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 复制">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/click-love.js&quot;&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="二、【宠物插件】"><a href="#二、【宠物插件】" class="headerlink" title="二、【宠物插件】"></a>二、【宠物插件】</h3><p>1.在命令指令\hexo\blog路径下 ，输入如下指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 复制">npm install --save hexo-helper-live2d<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 复制">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>2.安装好live2d插件后，可以安装合适的宠物了，宠物可以在网上搜寻，下面就随便举例一个宠物的安装,在命令指令下输入如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 复制">npm install live2d-widget-model-chitose<br></code></pre></td></tr></table></figure>
+<p>3.下载好后，就可以在路径hexo\blog\下的_config.yml文件里面，在代码的最下面添加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs 复制">live2d:<br>enable: true<br>scriptFrom: local<br>pluginRootPath: live2dw/<br>pluginJsPath: lib/<br>pluginModelPath: assets/<br>model:<br>#    这是一个挺高帅的小哥<br>    use: live2d-widget-model-chitose<br>display:<br> position: right<br> width: 150<br> height: 300<br>#    水平位置<br>#    hOffset: 0<br>#    垂直位置<br> vOffset: -100<br>mobile:<br> show: true<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 复制">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>最后命令指令执行hexo c &amp;&amp; hexo g &amp;&amp; hexo s ,进入博客页面后刷新一下页面就可以看到了。</p>
 
                 
               </div>
@@ -290,6 +292,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/My-first-blog-%E6%9C%89%E5%85%B3Fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96/">#My first blog:有关Fluid主题的优化</a>
+      
+    </div>
+  
 </div>
 
 
@@ -298,8 +307,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2023/04/18/hello-world/</div>
+      <div>有关Fluid主题的优化</div>
+      <div>http://example.com/2023/04/22/有关Fluid主题的优化/</div>
     </div>
     <div class="license-meta">
       
@@ -311,7 +320,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月18日</div>
+          <div>2023年4月22日</div>
         </div>
       
       
@@ -338,6 +347,17 @@
 
 
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
               
             </div>
 
