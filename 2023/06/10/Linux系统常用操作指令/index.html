@@ -1,0 +1,1355 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="小乐">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="对于学Linux系统来说，掌握它的一些内部指令是一门必修课，也是后面Linux设计、开发、调试的基本操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux系统常用操作指令">
+<meta property="og:url" content="http://example.com/2023/06/10/Linux%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="小乐">
+<meta property="og:description" content="对于学Linux系统来说，掌握它的一些内部指令是一门必修课，也是后面Linux设计、开发、调试的基本操作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/blog2/1.png">
+<meta property="article:published_time" content="2023-06-10T11:45:21.173Z">
+<meta property="article:modified_time" content="2023-06-10T13:21:28.648Z">
+<meta property="article:author" content="小乐">
+<meta property="article:tag" content="Linux系统常用操作指令">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/blog2/1.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Linux系统常用操作指令 - 小乐</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/diy/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>欢迎进入小乐的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/blog2/1.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Linux系统常用操作指令"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        小乐
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-10 19:45" pubdate>
+          2023年6月10日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux系统常用操作指令</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="下面是我自己的嵌入式实验课程中需要掌握的一些Linux操作指令："><a href="#下面是我自己的嵌入式实验课程中需要掌握的一些Linux操作指令：" class="headerlink" title="下面是我自己的嵌入式实验课程中需要掌握的一些Linux操作指令："></a>下面是我自己的嵌入式实验课程中需要掌握的一些Linux操作指令：</h2><p>注意命令和处理选项和文件内容相互间必须有个空格</p>
+<table class="MsoNormalTable" style="width:492.7pt;margin-left:.1pt;border-collapse:collapse;border:none;
+ mso-border-alt:solid black 1.0pt;mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+ mso-border-insideh:1.0pt solid black;mso-border-insidev:1.0pt solid black" width="657" cellspacing="0" cellpadding="0" border="1">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;height:11.7pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-bottom:solid black 2.25pt;background:silver;padding:0cm 5.4pt 0cm 5.4pt;
+  height:11.7pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="font-family:宋体;color:black;mso-color-alt:
+  windowtext">命令</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:solid black 1.0pt;
+  border-left:none;border-bottom:solid black 2.25pt;border-right:solid windowtext 1.0pt;
+  mso-border-left-alt:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:11.7pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><b><span style="font-family:宋体">选项</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:106.3pt;border-top:solid black 1.0pt;
+  border-left:none;border-bottom:solid black 2.25pt;border-right:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:11.7pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><b><span style="font-family:宋体;color:black;mso-color-alt:windowtext">例子</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:253.4pt;border-top:solid black 1.0pt;
+  border-left:none;border-bottom:solid black 2.25pt;border-right:solid black 1.0pt;
+  mso-border-left-alt:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:11.7pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><b><span style="font-family:宋体">说明</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1;height:27.45pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:27.45pt" width="64" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><b><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">mkdir</span></b></span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:27.45pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-p<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:27.45pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span class="SpellE"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">mkdir</span></span><span style="color:black;mso-color-alt:windowtext" lang="EN-US"> <span class="SpellE">dir</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span class="SpellE"><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">mkdir</span></span><span style="color:black;mso-color-alt:windowtext" lang="EN-US"> –p dir1/dir2</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:27.45pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">创建一个名为</span><span class="SpellE"><span lang="EN-US">dir</span></span><span style="font-family:宋体">的目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">加</span><span lang="EN-US">-p</span><span style="font-family:宋体">选项后可以创建嵌套目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2;height:34.5pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:34.5pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cd</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:34.5pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">~<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">..<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">/<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:34.5pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cd <span class="SpellE">dir</span>/dir1/dir2</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cd
+  ~</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cd
+  -</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:34.5pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">访问</span><span class="SpellE"><span lang="EN-US">dir</span></span><span style="font-family:宋体">下的</span><span lang="EN-US">dir1</span><span style="font-family:宋体">下的</span><span lang="EN-US">dir2<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">~</span><span style="font-family:宋体">选项访问用户根目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-</span><span style="font-family:宋体">选项访问先前访问的目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">..</span><span style="font-family:宋体">选项访问上一次目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">/</span><span style="font-family:宋体">选项访问顶层目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;height:11.25pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:11.25pt" width="64" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><b><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">pwd</span></b></span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:11.25pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:11.25pt" width="142" valign="top">
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:11.25pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">显示当前绝对路径</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4;height:35.85pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.85pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cp</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:35.85pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">–r<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:35.85pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cp file1 file2</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cp
+  –r dir1 dir2<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cp
+  ~/<span class="GramE">file .</span>/</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:35.85pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">拷贝</span><span lang="EN-US">file1</span><span style="font-family:宋体">到</span><span lang="EN-US">file2<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">拷贝</span><span lang="EN-US">dir1</span><span style="font-family:宋体">下的所有目录和文件到</span><span lang="EN-US">dir2 <o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">拷贝用户目录的</span><span lang="EN-US">file</span><span style="font-family:宋体">到最顶层目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5;height:29.75pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.75pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">mv</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:29.75pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:29.75pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">mv file1 file2</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:29.75pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">文件</span><span lang="EN-US">file1</span><span style="font-family:宋体">重命名为</span><span lang="EN-US">file2</span><span style="font-family:宋体">或</span><span lang="EN-US">file1</span><span style="font-family:宋体">文件或目录拷贝到</span><span lang="EN-US">file2</span><span style="font-family:宋体">目录下</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:6;height:17.45pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:17.45pt" width="64" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><b><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">rmdir</span></b></span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:17.45pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:17.45pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span class="SpellE"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">rmdir</span></span><span style="color:black;mso-color-alt:windowtext" lang="EN-US"> <span class="SpellE">dir</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:17.45pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">删除</span><span class="SpellE"><span lang="EN-US">dir</span></span><span style="font-family:宋体">这个空目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:7;height:31.2pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:31.2pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">rm</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:31.2pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-r<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-f<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:31.2pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">rm <span class="SpellE">dir</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">rm
+  –r <span class="SpellE">dir</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">rm
+  –f <span class="SpellE">dir</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:31.2pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">删除</span><span class="SpellE"><span lang="EN-US">dir</span></span><span style="font-family:宋体">这个文件或目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">删除</span><span class="SpellE"><span lang="EN-US">dir</span></span><span style="font-family:宋体">下的所有文件或目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">删除时不提示</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:8;height:36.0pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:36.0pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">ls</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:36.0pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:36.0pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">-a</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">-l</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:36.0pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">罗列当前目录下的文件和目录加</span><span lang="EN-US">-a</span><span style="font-family:宋体">选项列出所有包括隐藏的加</span><span lang="EN-US">-l</span><span style="font-family:宋体">显示文件详细信息</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:9;height:27.35pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:27.35pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">touch</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:27.35pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-a<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-c<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-d<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-m<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-r<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-t<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:27.35pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">touch file1</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:27.35pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-a</span><span style="font-family:宋体">只更改存取时间</span><span lang="EN-US">-c</span><span style="font-family:宋体">不建立任何文件</span><span lang="EN-US">-d &lt;</span><span style="font-family:宋体">后面加日期时间</span><span lang="EN-US">&gt;-m</span><span style="font-family:宋体">只更改变动时间</span><span lang="EN-US">-r &lt;</span><span style="font-family:宋体">参考文件和目录</span><span lang="EN-US">&gt; -t &lt;</span><span style="font-family:宋体">日期和时间</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">建立</span><span lang="EN-US">file1</span><span style="font-family:宋体">文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:10;height:13.7pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.7pt" width="64" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><b><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">gedit</span></b></span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.7pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:13.7pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span class="SpellE"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">gedit</span></span><span style="color:black;mso-color-alt:windowtext" lang="EN-US"> file</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.7pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">建立并编辑</span><span lang="EN-US">file</span><span style="font-family:宋体">文本或文件（用</span><span lang="EN-US">vi</span><span style="font-family:宋体">也可以）</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:11;height:6.6pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.6pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cat</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:6.6pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-b<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-n<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-s<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:6.6pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">cat –b file1</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:6.6pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">列出文件内容时给非空白列编号</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">列出文件内容时，在每行开头加上编号</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">把连续的多个空行缩成一行显示</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:12;height:196.2pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:196.2pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">tar</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:196.2pt" width="113" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-c<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-r<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-t<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-u<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-x<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-f<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-h<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-v<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-j<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-z<o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">-Z<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:196.2pt" width="142" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">tar <span class="SpellE">zxvf</span> toolchain.tar.gz -C</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:196.2pt" width="338" valign="top">
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">新建备份文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">新增文件到已存在备份文件的结尾部分</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">列出备份文件的内容</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">仅<span class="GramE">置换较</span>备份文件后更新的文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">从备份文件还原文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span lang="EN-US">&lt;</span><span style="font-family:宋体">备份文件</span><span lang="EN-US">&gt; </span><span style="font-family:宋体">指定备份文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">不建立符号链接</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">显示命令处理文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">使用</span><span class="SpellE"><span lang="EN-US">bzip</span></span><span style="font-family:宋体">命令处理文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">使用</span><span class="SpellE"><span lang="EN-US">gzip</span></span><span style="font-family:宋体">命令处理文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">使用</span><span lang="EN-US">compress</span><span style="font-family:宋体">命令处理文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal" style="text-align:left;mso-pagination:widow-orphan" align="left"><span style="font-family:宋体">解压</span><span lang="EN-US">toolchain.tar.gz</span><span style="font-family:宋体">到当前用户目录</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">参数</span><span lang="EN-US">-<span class="SpellE">jxvf</span></span><span style="font-family:宋体">可用来解压指定的</span><span lang="EN-US">.bz2</span><span style="font-family:宋体">文件，相应的，</span><span lang="EN-US">-<span class="SpellE">zxvf</span></span><span style="font-family:
+  宋体">可</span> <span style="font-family:宋体">解压</span><span lang="EN-US">.<span class="SpellE">gz</span></span><span style="font-family:宋体">文件、</span><span lang="EN-US">-<span class="SpellE">Zxvf</span></span><span style="font-family:
+  宋体">可用来解压</span><span lang="EN-US">.z</span><span style="font-family:宋体">文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:13;height:13.85pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt" width="64" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><b><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">dmesg</span></b></span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:13.85pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US">&gt;<o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt" width="142" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">dmesg</span></span><span style="color:black;mso-color-alt:windowtext" lang="EN-US"> &gt; <span class="SpellE">mesg</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:13.85pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">将开机信息存到</span><span class="SpellE"><span lang="EN-US">mesg</span></span><span style="font-family:
+  宋体">里</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:14;height:41.05pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:41.05pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">more</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:41.05pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US">-&lt;</span><span style="font-family:
+  宋体">行数</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">+/&lt;</span><span style="font-family:
+  宋体">字符串</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-d<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:41.05pt" width="142" valign="top">
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">more
+  </span><span style="font-family:宋体;color:black;mso-color-alt:windowtext">选项</span><span style="color:black;mso-color-alt:windowtext"> </span><span style="font-family:
+  宋体;color:black;mso-color-alt:windowtext">文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:41.05pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">显示文件的行数</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">在文件中查找指定的字符串，然后显示字符所在页</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">从指定行数开始显示</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:15;height:85.25pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:85.25pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">less
+  </span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:85.25pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US">-<span class="SpellE">i</span><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-I<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-N<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-o &lt;</span><span style="font-family:
+  宋体">输出文件</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-0 &lt;</span><span style="font-family:
+  宋体">输出文件</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-s<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:85.25pt" width="142" valign="top">
+  <p class="MsoNormal"><span style="color:black;mso-color-alt:windowtext" lang="EN-US">less
+  </span><span style="font-family:宋体;color:black;mso-color-alt:windowtext">选项</span><span style="color:black;mso-color-alt:windowtext"> </span><span style="font-family:
+  宋体;color:black;mso-color-alt:windowtext">文件</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:85.25pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">忽略字符大小写，除了查找时</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">忽略所有大小写</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">在每行开头显示行编号</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">将</span><span lang="EN-US">less</span><span style="font-family:宋体">命令读入的数据输出成文件保存起来</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">同上，但遇到已经存在的文件名不提示</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">把连续多个空行缩成一行</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:16;height:22.75pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:22.75pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">head</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:22.75pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US">-n<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:22.75pt" width="142" valign="top">
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:22.75pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">显示文件头部</span><span lang="EN-US">n</span><span style="font-family:宋体">行</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:17;height:52.9pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:52.9pt" width="64" valign="top">
+  <p class="MsoNormal"><b><span style="color:black;mso-color-alt:windowtext" lang="EN-US">tail
+  </span><span lang="EN-US"><o:p></o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  <p class="MsoNormal"><b><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:52.9pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US">-c&lt;</span><span style="font-family:
+  宋体">显示数目</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-n&lt;</span><span style="font-family:
+  宋体">显示行数</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-q<o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US">-v<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:52.9pt" width="142" valign="top">
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:52.9pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:宋体">显示文件尾部数目，单位为字节在数字后面加</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">不显示文件名</span><span lang="EN-US"><o:p></o:p></span></p>
+  <p class="MsoNormal"><span style="font-family:宋体">显示文件名</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:18;height:19.15pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:19.15pt" width="64" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><b><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">sudo</span></b></span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:19.15pt" width="113" valign="top">
+  <p class="MsoNormal"><span lang="EN-US">-s<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:19.15pt" width="142" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">sudo</span></span><span style="color:black;mso-color-alt:windowtext" lang="EN-US"> -s</span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:19.15pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:&quot;微软雅黑&quot;,sans-serif;color:#111111">提升权限，在<span class="SpellE"><span lang="EN-US">linux</span></span>里面是提升到<span lang="EN-US">root</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:19;mso-yfti-lastrow:yes;height:20.15pt">
+  <td style="width:47.95pt;border:solid black 1.0pt;
+  border-top:none;mso-border-top-alt:solid black 1.0pt;background:silver;
+  padding:0cm 5.4pt 0cm 5.4pt;height:20.15pt" width="64" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><b><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">su</span></b></span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+  <td style="width:3.0cm;border-top:none;border-left:none;
+  border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;mso-border-top-alt:
+  solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:20.15pt" width="113" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><span lang="EN-US">su</span></span><span lang="EN-US"> &lt;</span><span style="font-family:宋体">用户名</span><span lang="EN-US">&gt;<o:p></o:p></span></p>
+  </td>
+  <td style="width:106.3pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  background:silver;padding:0cm 5.4pt 0cm 5.4pt;height:20.15pt" width="142" valign="top">
+  <p class="MsoNormal"><span class="SpellE"><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US">su</span></span><span style="color:black;
+  mso-color-alt:windowtext" lang="EN-US"> <span class="SpellE">ada</span></span><span lang="EN-US"><o:p></o:p></span></p>
+  </td>
+  <td style="width:253.4pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  mso-border-top-alt:solid black 1.0pt;mso-border-left-alt:solid black 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:20.15pt" width="338" valign="top">
+  <p class="MsoNormal"><span style="font-family:&quot;微软雅黑&quot;,sans-serif;color:#111111">切换到<span class="SpellE"><span lang="EN-US">ada</span></span></span><span style="font-family:
+  宋体">用户</span> <span style="font-family:&quot;微软雅黑&quot;,sans-serif;
+  color:#111111" lang="EN-US"><o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+以上是我目前接触的一些常用到的Linux指令，建议每条指令多自己实操几次哈。
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/">#Linux系统常用操作指令</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Linux系统常用操作指令</div>
+      <div>http://example.com/2023/06/10/Linux系统常用操作指令/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>小乐</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/06/10/%E5%9F%BA%E4%BA%8Emarkdown%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%AE%9E%E7%94%A8%E5%8A%9F%E8%83%BD/" title="基于markdown文件添加实用功能">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">基于markdown文件添加实用功能</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/04/22/%E6%9C%89%E5%85%B3Fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96/" title="有关Fluid主题的优化">
+                        <span class="hidden-mobile">有关Fluid主题的优化</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  <!-- 以下是添加的内容 -->
+  <div class="footer-content">
+    <div>
+      <span id="timeDate">载入天数...</span>
+      <span id="times">载入时分秒...</span>
+      <script>
+      var now = new Date();
+      function createtime(){
+          var grt= new Date("04/18/2023 00:00:00");//此处修改你的建站时间或者网站上线时间
+          now.setTime(now.getTime()+250);
+          days = (now - grt ) / 1000 / 60 / 60 / 24;
+          dnum = Math.floor(days);
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+          hnum = Math.floor(hours);
+          if(String(hnum).length ==1 ){
+              hnum = "0" + hnum;
+          }
+          minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+          mnum = Math.floor(minutes);
+          if(String(mnum).length ==1 ){
+                    mnum = "0" + mnum;
+          }
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+          snum = Math.round(seconds);
+          if(String(snum).length ==1 ){
+                    snum = "0" + snum;
+          }
+          document.getElementById("timeDate").innerHTML = " 博客已运行🚀&nbsp"+dnum+"&nbsp天";  //此次自定义显示内容
+          document.getElementById("times").innerHTML = hnum + "&nbsp小时&nbsp" + mnum + "&nbsp分&nbsp" + snum + "&nbsp秒";
+      }  //此次自定义显示内容
+      setInterval("createtime()",250);
+      </script>
+    </div>
+  </div>
+<!-- 添加内容截至此处 -->
+
+  
+    <div class="footer-content">
+      
+<i class="iconfont icon-love"></i>
+
+    </div>
+  
+  
+  
+  
+</div>
+<!-- 鼠标点击爱心特效 -->
+<script type="text/javascript" src="/js/click-love.js"></script>
+
+
+
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/diy/timeDate.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 雪花特效:<script type="text/javascript" src="\js\snow.js"></script>  -->
+
+<!-- 樱花特效 ：<script src="https://api.wukeke.top/huang.js"></script> -->
+<script src="https://api.wukeke.top/huang.js"></script>
+
+
