@@ -16,26 +16,26 @@
   <meta name="author" content="小乐">
   <meta name="keywords" content="">
   
-    <meta name="description" content="刚开始Fluid主题页面虽然完善，但还是可以将主题页面感官下更加fascinating!">
+    <meta name="description" content="Matlab功能强大，其主要功能是用于仿真实验，而对于初学者来说，需要提前知道一些Matlab编程，才能看懂代码的逻辑，故特此记录学习过程中的要点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="有关Fluid主题的优化">
-<meta property="og:url" content="https://xiaolelhy.github.io/2023/04/22/%E6%9C%89%E5%85%B3Fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:title" content="Matlab编程笔记">
+<meta property="og:url" content="https://xiaolelhy.github.io/2024/08/10/Matlab%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="小乐">
-<meta property="og:description" content="刚开始Fluid主题页面虽然完善，但还是可以将主题页面感官下更加fascinating!">
+<meta property="og:description" content="Matlab功能强大，其主要功能是用于仿真实验，而对于初学者来说，需要提前知道一些Matlab编程，才能看懂代码的逻辑，故特此记录学习过程中的要点">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xiaolelhy.github.io/img/blog1/1.png">
-<meta property="article:published_time" content="2023-04-22T10:25:24.436Z">
-<meta property="article:modified_time" content="2024-08-10T08:28:44.453Z">
+<meta property="og:image" content="https://xiaolelhy.github.io/img/blog4/1.png">
+<meta property="article:published_time" content="2024-08-10T08:31:15.640Z">
+<meta property="article:modified_time" content="2024-08-10T12:24:38.839Z">
 <meta property="article:author" content="小乐">
-<meta property="article:tag" content="My first blog:有关Fluid主题的优化">
+<meta property="article:tag" content="Matlab编程笔记">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://xiaolelhy.github.io/img/blog1/1.png">
+<meta name="twitter:image" content="https://xiaolelhy.github.io/img/blog4/1.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>有关Fluid主题的优化 - 小乐</title>
+  <title>Matlab编程笔记 - 小乐</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,13 +200,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/blog1/1.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/blog4/1.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="有关Fluid主题的优化"></span>
+            <span id="subtitle" data-typed-text="Matlab编程笔记"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-22 18:25" pubdate>
-          2023年4月22日 晚上
+        <time datetime="2024-08-10 16:31" pubdate>
+          2024年8月10日 下午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          2.3k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          24 分钟
+          20 分钟
         
       </span>
     
@@ -306,12 +306,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">有关Fluid主题的优化</h1>
+            <h1 style="display: none">Matlab编程笔记</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2024年8月10日 下午
+                    本文最后更新于：2024年8月10日 晚上
                   
                 
               </p>
@@ -319,21 +319,50 @@
             
               <div class="markdown-body">
                 
-                <h2 id="下面直接进入主题"><a href="#下面直接进入主题" class="headerlink" title="下面直接进入主题"></a>下面直接进入主题</h2><h3 id="一、【点击弹出爱心】"><a href="#一、【点击弹出爱心】" class="headerlink" title="一、【点击弹出爱心】"></a>一、【点击弹出爱心】</h3><p>1.在hexo\blog\themes\fluid\source\js目录下新建一个js文件为click-love.js<br>代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">! function (e, t, a) &#123;</span><br><span class="line">    function n() &#123;</span><br><span class="line">        c(&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &#x27;&#x27;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;), o(), r()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function r() &#123;</span><br><span class="line">        for (var e = 0; e &lt; d.length; e++) d[e].alpha &lt;= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = &quot;left:&quot; + d[e].x + &quot;px;top:&quot; + d[e].y + &quot;px;opacity:&quot; + d[e].alpha + &quot;;transform:scale(&quot; + d[e].scale + &quot;,&quot; + d[e].scale + &quot;) rotate(45deg);background:&quot; + d[e].color + &quot;;z-index:99999&quot;);</span><br><span class="line">        requestAnimationFrame(r)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function o() &#123;</span><br><span class="line">        var t = &quot;function&quot; == typeof e.onclick &amp;&amp; e.onclick;</span><br><span class="line">        e.onclick = function (e) &#123;</span><br><span class="line">            t &amp;&amp; t(), i(e)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function i(e) &#123;</span><br><span class="line">        var a = t.createElement(&quot;div&quot;);</span><br><span class="line">        a.className = &quot;heart&quot;, d.push(&#123;</span><br><span class="line">            el: a,</span><br><span class="line">            x: e.clientX - 5,</span><br><span class="line">            y: e.clientY - 5,</span><br><span class="line">            scale: 1,</span><br><span class="line">            alpha: 1,</span><br><span class="line">            color: s()</span><br><span class="line">        &#125;), t.body.appendChild(a)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function c(e) &#123;</span><br><span class="line">        var a = t.createElement(&quot;style&quot;);</span><br><span class="line">        a.type = &quot;text/css&quot;;</span><br><span class="line">        try &#123;</span><br><span class="line">            a.appendChild(t.createTextNode(e))</span><br><span class="line">        &#125; catch (t) &#123;</span><br><span class="line">            a.styleSheet.cssText = e</span><br><span class="line">        &#125;</span><br><span class="line">        t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function s() &#123;</span><br><span class="line">        return &quot;rgb(&quot; + ~~(255 * Math.random()) + &quot;,&quot; + ~~(255 * Math.random()) + &quot;,&quot; + ~~(255 * Math.random()) + &quot;)&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    var d = [];</span><br><span class="line">    e.requestAnimationFrame = function () &#123;</span><br><span class="line">        return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) &#123;</span><br><span class="line">            setTimeout(e, 1e3 / 60)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(), n()</span><br><span class="line">&#125;(window, document);</span><br></pre></td></tr></table></figure>
+                <h3 id="Matlab基础操作"><a href="#Matlab基础操作" class="headerlink" title="Matlab基础操作"></a>Matlab基础操作</h3><h4 id="一、如何运行一个程序"><a href="#一、如何运行一个程序" class="headerlink" title="一、如何运行一个程序"></a>一、如何运行一个程序</h4><p>1.如果程序中有function，但没有输入与输出的，直接保存，注意保存文件名必须和函数名相同，保存后在运行即可；<br>2.无function,有%%分节符的，在选定之后可以直接Ctrl+Enter，即可运行；<br>3.function程序有输入但没有输出时，此时只可调用。</p>
+<h4 id="二、使用过程中要灵活使用帮助"><a href="#二、使用过程中要灵活使用帮助" class="headerlink" title="二、使用过程中要灵活使用帮助"></a>二、使用过程中要灵活使用帮助</h4><p>函数有自定义函数（function），以及内置函数，而对于内置函数，可以在命令行中输入：doc 内置函数名<br>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doc plot</span><br></pre></td></tr></table></figure>
+<p>再按Enter回车即可出现函数的详细使用页面，也就是帮助页面。碰到问题上网百度也可以。</p>
+<h3 id="Matlab核心操作一：矩阵操作"><a href="#Matlab核心操作一：矩阵操作" class="headerlink" title="Matlab核心操作一：矩阵操作"></a>Matlab核心操作一：矩阵操作</h3><p>Matlab中的数据一般为：数组、向量、表格、矩阵。文件中，程序首行常常输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear;clc;close all;</span><br></pre></td></tr></table></figure>
+<p>来分别清空工作区中的变量，清空命令行窗口的命令和关闭所有图形。同时在Matlab程序中，有时候语句代码句尾加”;”，表示在命令窗口中不显示输出结果，而不加”;”，则会在命令窗口中显示输出结果。</p>
+<h4 id="一、输入矩阵"><a href="#一、输入矩阵" class="headerlink" title="一、输入矩阵"></a>一、输入矩阵</h4><p>输入矩阵可以用直接输入法，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A=[x,x,····] %x为变量</span><br></pre></td></tr></table></figure>
+<p>也可以用生成矩阵法，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A=zeros(5,5) %zeros为内置函数，用于生成零矩阵</span><br><span class="line">A(1,1)=1</span><br><span class="line">%或者:</span><br><span class="line">A=[zeros(3);zeros(3)] %该矩阵表示为6行3列的零矩阵</span><br><span class="line">A=[zeros(3) zeros(3)] %该矩阵表示3行6列的零矩阵</span><br></pre></td></tr></table></figure>
+<h4 id="二、矩阵的运算"><a href="#二、矩阵的运算" class="headerlink" title="二、矩阵的运算"></a>二、矩阵的运算</h4><p>1.矩阵运算符 .* 代表矩阵中对应的元素相乘；<br>2.矩阵运算符 * 代表按照矩阵的乘法规则相乘；<br>3.同理 .^ ， ^ ， .&#x2F; ， &#x2F; ， + ，- ，\ ， 运算符号运算类似。（即加 . 的是对应元素进行运算，没加的就是按照数学上的矩阵运算）</p>
+<h4 id="三、矩阵的一些常用操作"><a href="#三、矩阵的一些常用操作" class="headerlink" title="三、矩阵的一些常用操作"></a>三、矩阵的一些常用操作</h4><p>矩阵中的end，代表最后一个的意思，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(end,3) %表示矩阵A中最后一行第三列中的元素</span><br></pre></td></tr></table></figure>
+<p>矩阵中的 : ，代表三种意思，首先是代表“所有”的意思，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(:,1) %表示所有的行第一列，也就是第一列的元素</span><br></pre></td></tr></table></figure>
+<p>特别的，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A(:,:) %表示A矩阵本身</span><br><span class="line">A(:) %则表示A中的所有元素按列存储，即将A转化为一个列向量</span><br></pre></td></tr></table></figure>
+<p>其次是代表“到”的意思，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1:3 %表示[1,2,3]一个行向量的意思，注意[1 2 3]与[1,2,3]都代表一个行向量的意思</span><br></pre></td></tr></table></figure>
+<p>最后是代表“生成等差数列”的意思，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1:3:10 %表示[1,4,7,10]，即1为初始值，3作为步长（公差），10代表最后一个数不超过的值</span><br></pre></td></tr></table></figure>
+<p>再举一个综合的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(1:3:10,3:6) %表示矩阵A中的第1，4，7，10行第3，4，5，6列的值</span><br></pre></td></tr></table></figure>
 
-<p>2.在hexo\blog\themes\fluid\layout_partials\footer.ejs文件中引入刚才创建的js文件<br>代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/click-love.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="二、【宠物插件】"><a href="#二、【宠物插件】" class="headerlink" title="二、【宠物插件】"></a>二、【宠物插件】</h3><p>1.在命令指令\hexo\blog路径下 ，输入如下指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
-
-<p>2.安装好live2d插件后，可以安装合适的宠物了，宠物可以在网上搜寻，下面就随便举例一个宠物的安装,在命令指令下输入如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-chitose</span><br></pre></td></tr></table></figure>
-<p>3.下载好后，就可以在路径hexo\blog\下的_config.yml文件里面，在代码的最下面添加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">enable: true</span><br><span class="line">scriptFrom: local</span><br><span class="line">pluginRootPath: live2dw/</span><br><span class="line">pluginJsPath: lib/</span><br><span class="line">pluginModelPath: assets/</span><br><span class="line">model:</span><br><span class="line">#    这是一个挺高帅的小哥</span><br><span class="line">    use: live2d-widget-model-chitose</span><br><span class="line">display:</span><br><span class="line"> position: right</span><br><span class="line"> width: 150</span><br><span class="line"> height: 300</span><br><span class="line">#    水平位置</span><br><span class="line">#    hOffset: 0</span><br><span class="line">#    垂直位置</span><br><span class="line"> vOffset: -100</span><br><span class="line">mobile:</span><br><span class="line"> show: true</span><br></pre></td></tr></table></figure>
-
-<p>最后命令指令执行hexo c &amp;&amp; hexo g &amp;&amp; hexo s ,进入博客页面后刷新一下页面就可以看到了。</p>
-
+<h3 id="Matlab核心操作二：编程命令"><a href="#Matlab核心操作二：编程命令" class="headerlink" title="Matlab核心操作二：编程命令"></a>Matlab核心操作二：编程命令</h3><h4 id="一、条件语句"><a href="#一、条件语句" class="headerlink" title="一、条件语句"></a>一、条件语句</h4><p>代码案例1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if 条件</span><br><span class="line">  语句组（语句组中也可以继续嵌套if······end）</span><br><span class="line">end	</span><br></pre></td></tr></table></figure>
+<p>代码举例2如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if 条件1</span><br><span class="line">  语句组1</span><br><span class="line">else if 条件2</span><br><span class="line">  语句组2</span><br><span class="line">else ······</span><br><span class="line">  语句组n</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h4 id="二、循环语句"><a href="#二、循环语句" class="headerlink" title="二、循环语句"></a>二、循环语句</h4><p>代码案例1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for 循环变量=[数组]</span><br><span class="line">  语句体（也可嵌套for······使用）</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>循环语句中可以使用break，来跳出当前循环，使用continue，来进行下一轮循环。<br>代码案例2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try</span><br><span class="line">  语句组1 %没有语法错误时，则执行该语句</span><br><span class="line">catch</span><br><span class="line">  语句组2（保存错误信息） %有错误时，则执行该语句</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h4 id="其他的编程命令，则是由这些基本命令的组合，多去看，多思考即可明白"><a href="#其他的编程命令，则是由这些基本命令的组合，多去看，多思考即可明白" class="headerlink" title="其他的编程命令，则是由这些基本命令的组合，多去看，多思考即可明白"></a>其他的编程命令，则是由这些基本命令的组合，多去看，多思考即可明白</h4><h3 id="Matlab函数操作"><a href="#Matlab函数操作" class="headerlink" title="Matlab函数操作"></a>Matlab函数操作</h3><p>1.脚本文件代码中无function，对于脚本文件命名不要使用纯数字，有时候会对仿真结果造成影响；<br>2.函数文件代码中有function，且第一个不被注释的行就有function，注意函数文件名和函数名要相同，其次函数定义文件和函数调用文件（脚本文件、命令窗口）要在同一个目录。<br>3.定义函数时，有一些方便的命令，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">varargin %表示可以输入多个输入参数</span><br><span class="line">varargout %表示可以输出多个输出参数</span><br><span class="line">nargin %表示输入参数的个数</span><br><span class="line">nargout %表示输出参数的个数</span><br></pre></td></tr></table></figure>
+<p>这些都可以使用帮助页面进行了解。下面就例举一些代码来帮助理解。<br>代码举例1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function [x,y]=f(a,b) %此为两个输入，两个输出的形式</span><br><span class="line">  if nargin ==1 %输入参数为一个</span><br><span class="line">	b=0;</span><br><span class="line">  end</span><br><span class="line">  if nargin==0 %无输入参数</span><br><span class="line">	a=0;</span><br><span class="line">	b=0;</span><br><span class="line">  end</span><br><span class="line">  x=a+b; %正常情况有两个输入参数，两个输出参数</span><br><span class="line">  y=a-b;</span><br><span class="line">  if nargout==1 </span><br><span class="line">	x=[a+b,a-b]; %如果输出参数为一个，则返回一个向量结果</span><br><span class="line">  end</span><br></pre></td></tr></table></figure>
+<p>代码举例2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function varargout=sum(varargin)</span><br><span class="line">  n=vargin;</span><br><span class="line">  if n==1 %输入一个参数</span><br><span class="line">	varargout&#123;1&#125;=varargin&#123;1&#125;;</span><br><span class="line">  end</span><br><span class="line">  if n==2 %输入两个参数</span><br><span class="line">	arargout&#123;1&#125;=varargin&#123;1&#125;+varargin&#123;2&#125;;</span><br><span class="line">	varargout&#123;2&#125;=varargin&#123;1&#125;-varargin&#123;2&#125;; %将会有两个输出参数</span><br><span class="line">  end</span><br></pre></td></tr></table></figure>
+<p>4.一种特殊函数：匿名函数（句柄函数），表示函数无函数名，函数名由@代替。<br>代码举例1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f=@(x) x.^2+3*x+5; %f就相当于函数名称，相当于代表该函数的地址</span><br><span class="line">  y=f(3)</span><br></pre></td></tr></table></figure>
+<p>代码举例2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f=@sin; %相当于将内置函数sin的地址给f</span><br><span class="line">f(2) %相当于调用了sin(2)</span><br></pre></td></tr></table></figure>
+<h4 id="后续学习有进展在继续记录······"><a href="#后续学习有进展在继续记录······" class="headerlink" title="后续学习有进展在继续记录······"></a>后续学习有进展在继续记录······</h4>
                 
               </div>
             
@@ -345,7 +374,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/My-first-blog-%E6%9C%89%E5%85%B3Fluid%E4%B8%BB%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96/">#My first blog:有关Fluid主题的优化</a>
+        <a href="/tags/Matlab%E7%BC%96%E7%A8%8B%E7%AC%94%E8%AE%B0/">#Matlab编程笔记</a>
       
     </div>
   
@@ -357,8 +386,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>有关Fluid主题的优化</div>
-      <div>https://xiaolelhy.github.io/2023/04/22/有关Fluid主题的优化/</div>
+      <div>Matlab编程笔记</div>
+      <div>https://xiaolelhy.github.io/2024/08/10/Matlab编程笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -370,7 +399,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月22日</div>
+          <div>2024年8月10日</div>
         </div>
       
       
@@ -407,15 +436,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/10/Linux%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4/" title="Linux系统常用操作指令">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux系统常用操作指令</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/06/10/%E5%9F%BA%E4%BA%8Emarkdown%E6%96%87%E4%BB%B6%E6%B7%BB%E5%8A%A0%E5%AE%9E%E7%94%A8%E5%8A%9F%E8%83%BD/" title="基于markdown文件添加实用功能">
+                        <span class="hidden-mobile">基于markdown文件添加实用功能</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
